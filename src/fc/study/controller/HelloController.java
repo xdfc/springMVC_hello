@@ -1,4 +1,7 @@
 package fc.study.controller;
+/**
+ * 非注解实现
+ */
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -12,11 +15,11 @@ public class HelloController implements Controller {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 /*        ModelAndView mv = new ModelAndView();
         //封装显示到试图的数据名称
-        mv.addObject("msg","hellloMVC");
+        mv.addObject("message","hellloMVC");
         //视图名
         mv.setViewName("hello");
         return mv;*/
-        ModelAndView mav = new ModelAndView("index.jsp");
+        ModelAndView mav = new ModelAndView("WEB-INF/jsp/index.jsp");
         mav.addObject("message", "Hello Spring MVC");
         return mav;
     }
