@@ -2,6 +2,7 @@ package fc.study.controller;
 /**
  * 注解实现
  */
+import fc.study.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,11 +28,35 @@ public class HelloController1 {
         return modelAndView;
     }
 
-    @RequestMapping("/param")
+    //接收数据
+    //实现方法1，使用 Servlet 原生的 API
+/*    @RequestMapping("/param")
+    public ModelAndView getParam(HttpServletRequest request, HttpServletResponse response) {
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+
+        System.out.println(userName);
+        System.out.println(password);
+        return null;
+    }*/
+
+    //实现方法2，使用注解或者同名匹配
+/*    @RequestMapping("/param")
     public ModelAndView getParam(@RequestParam("userName_1") String userName, String password) {
 
         System.out.println(userName);
         System.out.println(password);
         return null;
+    }*/
+
+    //实现方法3，使用java简单类模型传参
+    @RequestMapping("/param")
+    public ModelAndView getParam(User user) {
+
+        System.out.println(user.getUserName());
+        System.out.println(user.getPassword());
+        return null;
     }
+
+
 }
