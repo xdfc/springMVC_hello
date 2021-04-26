@@ -58,5 +58,13 @@ public class HelloController1 {
         return null;
     }
 
+    //跳转
+    @RequestMapping("/jump")
+    public ModelAndView junp(){
+        ModelAndView mav = new ModelAndView("redirect:/test");
+        // 或者直接写成： return "redirect: ./hello";
+        return mav;
+    }
+
 
 }
