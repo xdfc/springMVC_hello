@@ -4,15 +4,20 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 这个有点问题 -->
-<!--    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!-- 配置handleMapping -->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!--配置HandlerAdapter-->
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+   <!--配置渲染器-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!--结果视图前缀-->
         <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--结果视图后缀-->
         <property name="suffix" value=".jsp"/>
     </bean>
-    <bean name="/hello" class="fc.study.controller.HelloController"/>-->
+    <!--配置请求和处理-->
+    <bean name="/hello" class="fc.study.controller.HelloController"/>
 
     <!-- 非注解实现，对应java类为HelloController -->
 <!--    <bean id="simpleUrlHandlerMapping"
