@@ -10,3 +10,6 @@
 
 <h1>${message}</h1>
 <h2>XiDian0</h2>
+${name}
+id = ${id}
+123456

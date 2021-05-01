@@ -4,22 +4,23 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 配置handleMapping -->
+    <!--对应HelloController的一种配置，根据URL的名字查找配置-->
+<!--    &lt;!&ndash; 配置handleMapping &ndash;&gt;
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
-    <!--配置HandlerAdapter-->
+    &lt;!&ndash;配置HandlerAdapter&ndash;&gt;
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-   <!--配置渲染器-->
+   &lt;!&ndash;配置渲染器&ndash;&gt;
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <!--结果视图前缀-->
+        &lt;!&ndash;结果视图前缀&ndash;&gt;
         <property name="prefix" value="/WEB-INF/jsp/"/>
-        <!--结果视图后缀-->
+        &lt;!&ndash;结果视图后缀&ndash;&gt;
         <property name="suffix" value=".jsp"/>
     </bean>
-    <!--配置请求和处理-->
-    <bean name="/hello" class="fc.study.controller.HelloController"/>
+    &lt;!&ndash;配置请求和处理&ndash;&gt;
+    <bean name="/hello" class="fc.study.controller.HelloController"/>-->
 
-    <!-- 非注解实现，对应java类为HelloController -->
+    <!-- 非注解实现，对应java类为HelloController，为URL分配Bean -->
 <!--    <bean id="simpleUrlHandlerMapping"
           class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
@@ -30,6 +31,8 @@
         </property>
     </bean>
     <bean id="helloController" class="fc.study.controller.HelloController"/>-->
+
+    <!--注解实现配置-->
     <context:component-scan base-package="fc.study.controller"/>
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />

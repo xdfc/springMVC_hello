@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${message}</title>
+
 </head>
 <body>
-<h1>${message}</h1>
-hello  hahaha
+<h1>${msg}</h1>
+hello 12345  xixi 你好
 </body>
 </html>
