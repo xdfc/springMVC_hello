@@ -3,7 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-
+<!--上传的配置-->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="defaultEncoding" value="utf-8"></property>
+    <property name="maxUploadSize" value="10485760000"></property>
+    <property name="maxInMemorySize" value="40960"></property>
+</bean>
     <!--对应HelloController的一种配置，根据URL的名字查找配置-->
 <!--    &lt;!&ndash; 配置handleMapping &ndash;&gt;
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>

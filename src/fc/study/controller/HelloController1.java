@@ -68,7 +68,6 @@ public class HelloController1 {
     public ModelAndView getParam(HttpServletRequest request, HttpServletResponse response) {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-
         System.out.println(userName);
         System.out.println(password);
         return null;
@@ -77,7 +76,6 @@ public class HelloController1 {
     //实现方法2，使用注解或者同名匹配
 /*    @RequestMapping("/param")
     public ModelAndView getParam(@RequestParam("userName_1") String userName, String password) {
-
         System.out.println(userName);
         System.out.println(password);
         return null;
@@ -86,7 +84,6 @@ public class HelloController1 {
     //实现方法3，使用java简单类模型传参
     @RequestMapping("/param")
     public ModelAndView getParam(User user) {
-
         System.out.println(user.getUserName());
         System.out.println(user.getPassword());
         return null;

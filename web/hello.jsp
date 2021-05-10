@@ -13,5 +13,6 @@
 <body>
 <h1>${msg}</h1>
 hello 12345  xixi 你好
+<h2>这个可以直接访问</h2>
 </body>
 </html>
