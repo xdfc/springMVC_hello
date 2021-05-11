@@ -9,6 +9,7 @@ import java.io.*;
 
 @Controller
 public class FileUploadController {
+    //实现文件上传
     @RequestMapping("/upload")
     public String fileupload(@RequestParam("file") CommonsMultipartFile file, HttpServletRequest req) throws IOException {
         //获取文件名
